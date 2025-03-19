@@ -1,19 +1,13 @@
-#include <Arduino.h>
+#include "distance_sensor.h"
 
-// put function declarations here:
-int myFunction(int, int);
+DistanceSensor* mySensor;
 
 void setup() {
-  Serial.begin(9600);
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
-  Serial.println(result);
+    Serial.begin(9600);
+    mySensor = new DistanceSensor(VL53L1X::Long, 50000, 50, 500, 400000, false);
 }
 
 void loop() {
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+    Serial.println(mySensor->measure());
+    delay(100);
 }
