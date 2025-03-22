@@ -30,10 +30,11 @@ def convertScanDataToCartesianData(scan_data, degree_step):
 
     return [coords_x, coords_y]
 
-SCAN_FILENAME = "reconstruction//scans//tinderbox_1.txt"
+SCAN_FILENAME = "reconstruction//scans//tinderbox_2.txt"
 DEGREES_ROTATION = 360
-SCATTER_INTERVAL_MILLIS = 100
-FULL_ROTATION_INTERVAL_MILLIS = 24300
+SCATTER_INTERVAL_MILLIS = 50
+FULL_ROTATION_INTERVAL_MILLIS = 23540
+# FULL_ROTATION_INTERVAL_MILLIS = 1500
 
 scan_data = readFileIntoList(SCAN_FILENAME)
 degree_step = calculateDegreeStep(SCATTER_INTERVAL_MILLIS, FULL_ROTATION_INTERVAL_MILLIS)
